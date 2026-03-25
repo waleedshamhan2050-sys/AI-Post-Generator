@@ -114,7 +114,7 @@ python main.py
 
 ## 📧 التواصل
 
-للاستفسارات أو الدعم، يرجى التواصل عبر [waleedshamhan2050@example.com](mailto:waleedshamhan2050@example.com).
+للاستفسارات أو الدعم، يرجى التواصل عبر [waleedshamhan2050@gmail.com](mailto:waleedshamhan2050@gmail.com).
 
 ---
 
