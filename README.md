@@ -17,10 +17,33 @@
 -   **تخزين الأمثلة**: حفظ المنشورات المولدة تلقائياً في مجلد `examples/` للرجوع إليها مستقبلاً.
 -   **مرونة التكامل**: يمكن تكييفها بسهولة للتكامل مع أنظمة إدارة المحتوى أو أدوات النشر الآلي.
 
+## 🆕 الوضع المفتوح: نموذج محلي عبر Ollama (افتراضي)
+
+يعمل المشروع الآن افتراضيًا على نموذج مفتوح الوزن محلي (Gemma 3) عبر Ollama — بدون API مدفوع وبدون إرسال محتواك خارج جهازك. الوضع القديم (OpenAI) ما زال متاحًا عبر `--provider openai`.
+
+```bash
+# 1. ثبّت Ollama من https://ollama.com ثم حمّل النموذج:
+ollama pull gemma3
+
+# 2. ثبّت المتطلبات:
+pip install -r requirements.txt
+
+# 3. شغّل بالوضع المفتوح (الافتراضي):
+python main.py
+
+# أو صراحةً:
+python main.py --provider ollama --model gemma3
+
+# الوضع القديم ما زال يعمل:
+python main.py --provider openai
+```
+لتغيير النموذج: عدّل `OLLAMA_MODEL` في ملف `.env` (مثال: `llama3.2` أو `qwen2.5` أو `mistral`).
+
 ## 🛠️ التقنيات المستخدمة
 
 -   **Python 3.x**: لغة البرمجة الرئيسية للمشروع.
 -   **OpenAI API**: لتوليد النصوص باستخدام نماذج الذكاء الاصطناعي (مثل `gpt-4.1-mini`).
+-   **Ollama + Gemma 3 (open-weight, local)**: الوضع الافتراضي الجديد — نموذج مفتوح الوزن يعمل محليًا بدون API مدفوع.
 -   **`python-dotenv`**: لإدارة متغيرات البيئة (مثل مفتاح API) بشكل آمن.
 -   **JSON**: لتخزين قوالب المنشورات بشكل منظم.
 
@@ -62,6 +85,8 @@ venv\Scripts\activate    # لنظام Windows
 ```bash
 pip install -r requirements.txt
 ```
+
+مفتاح OpenAI مطلوب فقط إذا استخدمت `--provider openai`؛ الوضع الافتراضي (Ollama) لا يحتاج مفتاحًا.
 
 ### 5. إعداد مفتاح OpenAI API
 
@@ -114,8 +139,8 @@ python main.py
 
 ## 📧 التواصل
 
-للاستفسارات أو الدعم، يرجى التواصل عبر [waleedshamhan2050@example.com](mailto:waleedshamhan2050@example.com).
+للاستفسارات أو الدعم، يرجى التواصل عبر [GitHub: waleedshamhan2050-sys](https://github.com/waleedshamhan2050-sys).
 
 ---
 
-**تاريخ آخر تحديث**: 25 مارس 2026
+**تاريخ آخر تحديث**: 16 أكتوبر 2026
